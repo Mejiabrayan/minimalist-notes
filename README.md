@@ -5,7 +5,7 @@ Minimal Notes is a simple note-taking app designed for users who prefer a minima
 ![Minimalist Notes](./src/renderer/src/assets/minimalist-notes.png)
 
 
-This is stick a work in progress.
+This is still a work in progress.
 
 ## To-Do's:
 
