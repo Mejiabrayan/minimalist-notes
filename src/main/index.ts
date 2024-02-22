@@ -65,7 +65,7 @@ app.whenReady().then(() => {
   ipcMain.handle('createNote', (_, ...args: Parameters<CreateNote>) => createNote(...args))
   ipcMain.handle('deleteNote', (_, ...args: Parameters<DeleteNote>) => deleteNote(...args))
 
-  createWindow()
+  createWindow()   
 
   app.on('activate', function () {
     // On macOS it's common to re-create a window in the app when the

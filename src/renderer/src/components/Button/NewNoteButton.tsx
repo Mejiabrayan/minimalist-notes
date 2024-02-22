@@ -2,17 +2,23 @@ import { LuFileSignature } from 'react-icons/lu'
 import { ActionButton, ActionButtonProps } from './ActionButton'
 import { useSetAtom } from 'jotai'
 import { createEmptyNoteAtom } from '@renderer/store'
+import { HiOutlineFolderAdd } from 'react-icons/hi'
 
-export const NewNoteButton = ({ ...props }: ActionButtonProps) => {
+export const NewNoteButton = ({ className, ...props }: ActionButtonProps) => {
   const createEmptyNote = useSetAtom(createEmptyNoteAtom)
 
   const handleCreation = async () => {
-    createEmptyNote()
+    await createEmptyNote()
   }
 
   return (
-    <ActionButton onClick={handleCreation} {...props}>
-      <LuFileSignature className="w-3 h-3 text-blue-400" />
+    <ActionButton
+      className={`flex items-center justify-start ${className}`}
+      onClick={handleCreation}
+      {...props}
+    >
+      <HiOutlineFolderAdd className="mr-2" />
+      <span className="text-xs"> New</span>
     </ActionButton>
   )
 }

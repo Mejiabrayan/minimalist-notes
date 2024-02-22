@@ -4,17 +4,14 @@ import Gradient from '../assets/gradient.jpeg'
 
 export const RootLayout = ({ children, className, ...props }: ComponentProps<'main'>) => {
   return (
-    <main
-      className={twMerge('grid grid-cols-3 min-h-screen gap-1 p-1 bg-[#1D1E22]', className)}
-      {...props}
-    >
+    <main className={twMerge('grid grid-cols-12 gap-1  bg-[#1D1E22]', className)} {...props}>
       {children}
     </main>
   )
 }
 export const Sidebar = ({ className, children, ...props }: ComponentProps<'aside'>) => {
   return (
-    <aside className={twMerge('mt-4 ', className)} {...props}>
+    <aside className={twMerge('col-span-2', className)} {...props}>
       {children}
     </aside>
   )
@@ -23,7 +20,7 @@ export const Sidebar = ({ className, children, ...props }: ComponentProps<'aside
 export const Wallpaper = ({ className, children, ...props }: ComponentProps<'div'>) => {
   return (
     <div
-      className={twMerge('bg-cover bg-center opacity-70 rounded', className)}
+      className={twMerge('bg-cover bg-center opacity-60 col-span-4', className)}
       style={{ backgroundImage: `url(${Gradient})` }}
       {...props}
     >
@@ -34,11 +31,7 @@ export const Wallpaper = ({ className, children, ...props }: ComponentProps<'div
 
 export const Content = forwardRef<HTMLDivElement, ComponentProps<'div'>>(
   ({ children, className, ...props }, ref) => (
-    <div
-      ref={ref}
-      className={twMerge('flex-1 h-screen col-span-1 overflow-y-scroll', className)}
-      {...props}
-    >
+    <div ref={ref} className={twMerge('col-span-6 p-3', className)} {...props}>
       {children}
     </div>
   )

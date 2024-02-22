@@ -1,18 +1,23 @@
-import { FaRegTrashCan } from 'react-icons/fa6'
+import { FaRegTrashCan, FaTrash } from 'react-icons/fa6'
 import { ActionButton, ActionButtonProps } from './ActionButton'
 import { useSetAtom } from 'jotai'
 import { deleteNoteAtom } from '@renderer/store'
-// import { deleteNoteAtom } from '@renderer/store'
+import { LuTrash2 } from 'react-icons/lu'
 
-export const DeleteNoteButton = ({ ...props }: ActionButtonProps) => {
+export const DeleteNoteButton = ({ className, ...props }: ActionButtonProps) => {
   const deleteNote = useSetAtom(deleteNoteAtom)
 
   const handleDeletion = async () => {
-    deleteNote()
+    await deleteNote()
   }
   return (
-    <ActionButton onClick={handleDeletion} {...props}>
-      <FaRegTrashCan className="w-3 h-3 text-blue-400" />
+    <ActionButton
+      className={`flex items-center justify-start ${className}`}
+      onClick={handleDeletion}
+      {...props}
+    >
+      <LuTrash2 className="mr-2" />
+      <span className="text-xs"> Delete</span>
     </ActionButton>
   )
 }

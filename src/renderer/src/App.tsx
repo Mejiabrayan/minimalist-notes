@@ -22,15 +22,18 @@ const App = () => {
     <>
       <DraggableTopBar />
       <RootLayout>
-        <Sidebar className="p-2">
-          <ActionButtonsRow className="flex justify-between mt-1" />
+        <Sidebar className="p-2 bg-[#1D1E22]">
+          <ActionButtonsRow className="flex justify-start" />
           <NotePreviewList className="mt-3" onSelect={resetScroll} />
         </Sidebar>
-        <Content ref={contentContainerRef} className="border-l border-l-white/10 mt-16">
+        <Content
+          ref={contentContainerRef}
+          className="border-l border-l-white/10 mt-16 overflow-y-scroll h-screen"
+        >
           <FloatingNoteTitle />
           <MarkdownEditor />
         </Content>
-        <Wallpaper className="" />
+        <Wallpaper />
       </RootLayout>
     </>
   )

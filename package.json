@@ -1,5 +1,5 @@
 {
-  "name": "Minimal Notes",
+  "name": "minimal-notes",
   "version": "1.0.0",
   "description": "An Electron application with React and TypeScript",
   "main": "./out/main/index.js",
@@ -26,7 +26,8 @@
     "@mdxeditor/editor": "^1.14.3",
     "fs-extra": "^11.2.0",
     "i": "^0.3.7",
-    "jotai": "^2.6.1"
+    "jotai": "^2.6.1",
+    "lucide": "^0.336.0"
   },
   "devDependencies": {
     "@electron-toolkit/eslint-config-prettier": "^1.0.1",
