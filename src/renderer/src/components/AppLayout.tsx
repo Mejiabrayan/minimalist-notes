@@ -1,6 +1,7 @@
 import { ComponentProps, forwardRef } from 'react'
 import { twMerge } from 'tailwind-merge'
 import Gradient from '../assets/gradient.jpeg'
+import { Avatar } from './Avatar'
 
 export const RootLayout = ({ children, className, ...props }: ComponentProps<'main'>) => {
   return (

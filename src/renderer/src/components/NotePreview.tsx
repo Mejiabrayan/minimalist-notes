@@ -9,6 +9,7 @@ export const NotePreview = ({
   title,
   content,
   lastEditTime,
+  category,
   isActive = false,
   className,
   ...props
@@ -28,6 +29,7 @@ export const NotePreview = ({
       {...props}
     >
       <h3 className="mb-1 font-bold truncate dark:text-white">{title}</h3>
+      <p className="mb-1 font-light truncate dark:text-white">{category}</p> {/* new line */}
       <time className="inline-block w-full mb-2 text-xs font-light text-left dark:text-slate-300">
         {date}
       </time>
